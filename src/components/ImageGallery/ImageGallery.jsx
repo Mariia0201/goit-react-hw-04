@@ -1,13 +1,24 @@
+import ImageCard from "../ImageCard/ImageCard";
+import css from './ImageGallery.module.css'
 
 
-function ImageGallery({ images = null}) {
+const ImageGallery = ({ results, onModalOpen }) => {
   return (
-    <ul>{images!== null && Array.isArray(images) && images.map(image => {
-        return <li key = {image.id}>
-          <img width={250} src={image.urls.small} title={image.alt_description}/>
-        </li>
-      })}</ul>
-  )
-}
+    <ul className={css.list}>
+      {results.map((result) => {
+        return (
+          <li key={result.id} className={css.item}>
+            <ImageCard
+              imageUrlFull={result.urls.regular}
+              imageUrl={result.urls.small}
+              title={result.alt_description}
+              onModalOpen={onModalOpen}
+            />
+          </li>
+        );
+      })}
+    </ul>
+  );
+};
 
-export default ImageGallery
+export default ImageGallery;

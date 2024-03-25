@@ -1,0 +1,20 @@
+.form {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.input {
+    padding: 8px;
+    font-size: 18px;
+    max-width: 300px;
+    width: 100%;
+    border: 2px solid rgb(156, 77, 156);
+    border-radius: 10px;
+    
+}
+
+.input::placeholder {
+    white-space: nowrap;
+}
